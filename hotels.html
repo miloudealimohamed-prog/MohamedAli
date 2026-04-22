@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | الفنادق</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" class="active" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="page-header">
+  <div class="ph-bg" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=500&fit=crop');"></div>
+  <div class="ph-ov"></div>
+  <div class="ph-cnt">
+    <div class="ph-label">أفضل الفنادق</div>
+    <h1 class="ph-title">أفضل <span>الفنادق</span> في الجزائر</h1>
+    <div class="breadcrumb"><a href="../index.html" data-key="nav_home">الرئيسية</a><span class="sep">›</span><span class="cur" data-key="nav_hotels">الفنادق</span></div>
+  </div>
+</div>
+
+<section style="background: var(--cream);">
+  <div class="container">
+    <div class="filter-bar reveal"><button class="filter-btn active" onclick="filterHotels('all', this)">الكل</button><button class="filter-btn" onclick="filterHotels('luxury', this)">⭐ فاخرة</button><button class="filter-btn" onclick="filterHotels('beach', this)">🏖️ شاطئية</button><button class="filter-btn" onclick="filterHotels('desert', this)">🏜️ صحراوية</button><button class="filter-btn" onclick="filterHotels('budget', this)">💰 اقتصادية</button></div>
+    <div class="hotels-grid" id="hotelsGrid">
+      <div class="hotel-card reveal" data-type="luxury"><img class="hotel-img" src="" loading="lazy"><div class="hotel-body"><div class="hotel-name">فندق الأوراسي</div><div class="hotel-location">📍 الجزائر العاصمة</div><div class="hotel-stars">★★★★★</div><div class="hotel-desc">فندق فاخر يطل على خليج الجزائر، يتميز بإطلالات رائعة وخدمات ممتازة.</div><div class="hotel-features"><span class="hotel-feature">🏊 مسبح</span><span class="hotel-feature">🍽️ مطعم</span><span class="hotel-feature">💆 سبا</span></div><div class="hotel-price"><div><span class="price-amount">25,000 دج</span><span class="price-night"> / الليلة</span></div><a href="booking.html" class="btn-sm">احجز</a></div></div></div>
+      <div class="hotel-card reveal" data-type="beach"><img class="hotel-img" src="" loading="lazy"><div class="hotel-body"><div class="hotel-name">فندق سيدي فرج</div><div class="hotel-location">📍 الجزائر العاصمة</div><div class="hotel-stars">★★★★☆</div><div class="hotel-desc">منتجع شاطئي رائع مع إطلالة مباشرة على البحر المتوسط.</div><div class="hotel-features"><span class="hotel-feature">🏖️ شاطئ خاص</span><span class="hotel-feature">🏊 مسبح</span><span class="hotel-feature">🍽️ مطعم</span></div><div class="hotel-price"><div><span class="price-amount">18,000 دج</span><span class="price-night"> / الليلة</span></div><a href="booking.html" class="btn-sm">احجز</a></div></div></div>
+      <div class="hotel-card reveal" data-type="luxury"><img class="hotel-img" src="" loading="lazy"><div class="hotel-body"><div class="hotel-name">شيراتون الجزائر</div><div class="hotel-location">📍 الجزائر العاصمة</div><div class="hotel-stars">★★★★★</div><div class="hotel-desc">فندق عالمي المستوى يقدم أرقى الخدمات والإطلالات الساحرة.</div><div class="hotel-features"><span class="hotel-feature">🏊 مسبح</span><span class="hotel-feature">🍽️ مطعم</span><span class="hotel-feature">💆 سبا</span><span class="hotel-feature">🏋️ جيم</span></div><div class="hotel-price"><div><span class="price-amount">32,000 دج</span><span class="price-night"> / الليلة</span></div><a href="booking.html" class="btn-sm">احجز</a></div></div></div>
+      <div class="hotel-card reveal" data-type="beach"><img class="hotel-img" src="" loading="lazy"><div class="hotel-body"><div class="hotel-name">فندق مزفران</div><div class="hotel-location">📍 بجاية</div><div class="hotel-stars">★★★★☆</div><div class="hotel-desc">فندق ساحر على شاطئ بجاية، مثالي لقضاء عطلة هادئة.</div><div class="hotel-features"><span class="hotel-feature">🏖️ شاطئ</span><span class="hotel-feature">🏊 مسبح</span><span class="hotel-feature">🍽️ مطعم</span></div><div class="hotel-price"><div><span class="price-amount">15,000 دج</span><span class="price-night"> / الليلة</span></div><a href="booking.html" class="btn-sm">احجز</a></div></div></div>
+      <div class="hotel-card reveal" data-type="desert"><img class="hotel-img" src="" loading="lazy"><div class="hotel-body"><div class="hotel-name">فندق تنكرات</div><div class="hotel-location">📍 تمنراست</div><div class="hotel-stars">★★★☆☆</div><div class="hotel-desc">إقامة مميزة في قلب الصحراء الكبرى بأجواء طوارقية أصيلة.</div><div class="hotel-features"><span class="hotel-feature">🏜️ صحراء</span><span class="hotel-feature">🍽️ مطعم</span><span class="hotel-feature">🅿️ موقف</span></div><div class="hotel-price"><div><span class="price-amount">9,000 دج</span><span class="price-night"> / الليلة</span></div><a href="booking.html" class="btn-sm">احجز</a></div></div></div>
+      <div class="hotel-card reveal" data-type="budget"><img class="hotel-img" src="" loading="lazy"><div class="hotel-body"><div class="hotel-name">إيبيس الجزائر</div><div class="hotel-location">📍 الجزائر العاصمة</div><div class="hotel-stars">★★★☆☆</div><div class="hotel-desc">فندق اقتصادي نظيف ومريح، قريب من المطار.</div><div class="hotel-features"><span class="hotel-feature">🍽️ مطعم</span><span class="hotel-feature">🅿️ موقف</span><span class="hotel-feature">🌐 واي فاي</span></div><div class="hotel-price"><div><span class="price-amount">8,000 دج</span><span class="price-night"> / الليلة</span></div><a href="booking.html" class="btn-sm">احجز</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="logo" style="margin-bottom: .5rem;"><div class="logo-icon"></div><div class="logo-text"><span class="logo-ar" data-key="brand_name">Tahwisa 213</span><span class="logo-en" data-key="brand_slogan">Tahwisa 213</span></div></div><p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p><div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div></div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="../index.html" data-key="nav_home">الرئيسية</a></li><li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="tours.html" data-key="nav_tours">الجولات</a></li><li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="about.html" data-key="nav_about">من نحن</a></li><li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="booking.html" data-key="nav_booking">احجز الآن</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | تسجيل الدخول</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="login-bg"></div>
+<div class="login-dots"></div>
+
+<div class="login-wrap">
+  <div class="login-card">
+    <div class="login-logo"><div class="login-logo-icon logo-icon"></div><div class="login-logo-name">Tahwisa 213</div><div class="login-logo-sub" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</div></div>
+    <div class="l-tabs"><button class="l-tab active" onclick="switchLTab('login', this)" data-key="login_title">تسجيل الدخول</button><button class="l-tab" onclick="switchLTab('reg', this)" data-key="register_title">إنشاء حساب جديد</button></div>
+    <div id="lLoginForm" class="l-form"><div class="l-error" id="loginErr">⚠️ البريد أو كلمة المرور غير صحيحة</div><div class="fg"><label data-key="login_email">البريد الإلكتروني</label><div class="l-input-wrap"><span class="l-icon">📧</span><input type="email" class="fi fi-ic" id="lEmail" placeholder="exemple@gmail.com"></div></div><div class="fg"><label data-key="login_password">كلمة المرور</label><div class="l-input-wrap"><span class="l-icon">🔒</span><input type="password" class="fi fi-ic" id="lPass" placeholder="••••••••"></div></div><div class="l-forgot" onclick="showToast('📧 تم إرسال رابط استعادة كلمة المرور')" data-key="login_forgot">نسيت كلمة المرور؟</div><button class="l-submit" onclick="doLoginPage()" data-key="login_btn">دخول إلى حسابي ←</button><div class="l-divider" data-key="login_google">أو</div><button class="l-google" onclick="doGoogleLogin()"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 29.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/></svg><span data-key="login_google">الدخول بـ Google</span></button></div>
+    <div id="lRegForm" class="l-form" style="display: none;"><div class="f2"><div class="fg"><label data-key="register_name">الاسم الكامل</label><div class="l-input-wrap"><span class="l-icon">👤</span><input type="text" class="fi fi-ic" id="rName" placeholder="محمد أمين..."></div></div><div class="fg"><label data-key="register_phone">رقم الهاتف</label><div class="l-input-wrap"><span class="l-icon">📞</span><input type="tel" class="fi fi-ic" id="rPhone" placeholder="0555..."></div></div></div><div class="fg"><label data-key="register_email">البريد الإلكتروني</label><div class="l-input-wrap"><span class="l-icon">📧</span><input type="email" class="fi fi-ic" id="rEmail" placeholder="exemple@gmail.com"></div></div><div class="fg"><label data-key="register_password">كلمة المرور</label><div class="l-input-wrap"><span class="l-icon">🔒</span><input type="password" class="fi fi-ic" id="rPass" placeholder="8 أحرف على الأقل"></div></div><div class="fg"><label data-key="register_confirm">تأكيد كلمة المرور</label><div class="l-input-wrap"><span class="l-icon">🔒</span><input type="password" class="fi fi-ic" id="rPass2" placeholder="••••••••"></div></div><button class="l-submit" onclick="doRegister()" data-key="register_btn">إنشاء الحساب والمتابعة ←</button><div class="l-divider" data-key="login_google">أو</div><button class="l-google" onclick="doGoogleLogin()"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 29.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/></svg><span data-key="login_google">التسجيل بـ Google</span></button></div>
+  </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

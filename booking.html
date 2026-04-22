@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | احجز الآن</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="active nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="booking-hero">
+  <div class="bh-bg"></div>
+  <div class="bh-cnt"><div class="ph-label" data-key="booking_label">حجز رحلتك</div><h1 class="ph-title">احجز <span>رحلتك الآن</span></h1><div class="breadcrumb"><a href="../index.html" data-key="nav_home">الرئيسية</a><span class="sep">›</span><span class="cur" data-key="nav_booking">الحجز</span></div></div>
+</div>
+
+<section style="background: var(--cream); padding: 3rem 0;">
+  <div class="container">
+    <div class="booking-wrap reveal">
+      <div class="booking-grid">
+        <div><p class="sec-label gold" data-key="booking_features_title">لماذا Tahwisa 213؟</p><h2 class="sec-title white" data-key="booking_features_sub">رحلتك <span>في أمان معنا</span></h2><p class="sec-desc light" style="margin-bottom: 2rem;" data-key="booking_features_desc">نحن هنا لنجعل كل تجربة سفر لا تُنسى</p><div class="feat"><div class="feat-icon">🛡️</div><div class="feat-txt"><h4>حجز آمن 100%</h4><p>ضمان استرداد كامل المبلغ في حال الإلغاء قبل 48 ساعة</p></div></div><div class="feat"><div class="feat-icon">🎯</div><div class="feat-txt"><h4>مرشد متخصص</h4><p>فريق من المرشدين المحترفين يرافقونك طوال الرحلة</p></div></div><div class="feat"><div class="feat-icon">🏨</div><div class="feat-txt"><h4>إقامة فاخرة</h4><p>أفضل الفنادق المختارة بعناية لراحة مثالية</p></div></div><div class="feat"><div class="feat-icon">📞</div><div class="feat-txt"><h4>دعم 24/7</h4><p>فريقنا متاح على مدار الساعة طيلة أيام الرحلة</p></div></div></div>
+        <div class="bf"><div class="bf-title" data-key="booking_form_title">📋 نموذج الحجز</div><div id="userBanner" class="user-banner" style="display: none;">👤 مرحباً <strong id="userNameShow"></strong> — حجزك مرتبط بحسابك</div><div class="f2"><div class="fg"><label class="lw" data-key="booking_name">الاسم الكامل *</label><input type="text" class="fi dk" id="bName" placeholder="محمد أمين..."></div><div class="fg"><label class="lw" data-key="booking_phone">رقم الهاتف *</label><input type="tel" class="fi dk" id="bPhone" placeholder="0555..."></div></div><div class="fg"><label class="lw" data-key="booking_email">البريد الإلكتروني</label><input type="email" class="fi dk" id="bEmail" placeholder="exemple@gmail.com"></div><div class="f2"><div class="fg"><label class="lw" data-key="booking_destination">الوجهة *</label><select class="fi dk" id="bDest"><option value="">اختر الوجهة</option><option>تمنراست — الهقار</option><option>بجاية — جرجرة</option><option>قسنطينة — تيمقاد</option><option>الجزائر العاصمة</option><option>تلمسان التاريخية</option><option>غرداية — وادي مزاب</option><option>عنابة — الطارف</option><option>أدرار — توات</option><option>وهران الباهية</option><option>جيجل — لؤلؤة</option></select></div><div class="fg"><label class="lw" data-key="booking_date">تاريخ الانطلاق *</label><input type="date" class="fi dk" id="bDate"></div></div><div class="world-dest-section"><div class="world-dest-title">🌍 وجهات عالمية مميزة</div><div class="world-dest-grid" id="worldDestGrid"><div class="world-dest-item" onclick="selectWorldDest('باريس - فرنسا', '🇫🇷', this)"><span class="world-dest-flag">🇫🇷</span><span class="world-dest-name">باريس</span></div><div class="world-dest-item" onclick="selectWorldDest('دبي - الإمارات', '🇦🇪', this)"><span class="world-dest-flag">🇦🇪</span><span class="world-dest-name">دبي</span></div><div class="world-dest-item" onclick="selectWorldDest('اسطنبول - تركيا', '🇹🇷', this)"><span class="world-dest-flag">🇹🇷</span><span class="world-dest-name">اسطنبول</span></div><div class="world-dest-item" onclick="selectWorldDest('لندن - بريطانيا', '🇬🇧', this)"><span class="world-dest-flag">🇬🇧</span><span class="world-dest-name">لندن</span></div><div class="world-dest-item" onclick="selectWorldDest('روما - إيطاليا', '🇮🇹', this)"><span class="world-dest-flag">🇮🇹</span><span class="world-dest-name">روما</span></div><div class="world-dest-item" onclick="selectWorldDest('برشلونة - إسبانيا', '🇪🇸', this)"><span class="world-dest-flag">🇪🇸</span><span class="world-dest-name">برشلونة</span></div><div class="world-dest-item" onclick="selectWorldDest('مراكش - المغرب', '🇲🇦', this)"><span class="world-dest-flag">🇲🇦</span><span class="world-dest-name">مراكش</span></div><div class="world-dest-item" onclick="selectWorldDest('القاهرة - مصر', '🇪🇬', this)"><span class="world-dest-flag">🇪🇬</span><span class="world-dest-name">القاهرة</span></div></div></div><div class="f2"><div class="fg"><label class="lw" data-key="booking_people">عدد الأشخاص</label><select class="fi dk" id="bPeople"><option>1 شخص</option><option>2 أشخاص</option><option>3 أشخاص</option><option selected>4 أشخاص</option><option>5+</option></select></div><div class="fg"><label class="lw" data-key="booking_package">نوع الباقة</label><select class="fi dk" id="bPkg"><option data-key="package_economy">اقتصادية</option><option selected data-key="package_standard">قياسية</option><option data-key="package_luxury">فاخرة</option></select></div></div><div class="fg"><label class="lw" data-key="booking_notes">ملاحظات خاصة</label><textarea class="fi dk" id="bNote" placeholder="أي طلبات خاصة..."></textarea></div><div class="car-section"><div class="car-toggle"><input type="checkbox" id="carCheck" onchange="toggleCarPanel()"><div><div class="car-toggle-label" onclick="document.getElementById('carCheck').click()" data-key="car_rental_title">🚗 أضف خدمة كراء سيارة سياحية</div><div class="car-toggle-sub" data-key="car_rental_sub">احجز سيارتك مع رحلتك بسعر خاص</div></div></div><div class="car-panel" id="carPanel"><div style="color: rgba(255,255,255,0.55); font-size:0.8rem; margin-bottom:1rem;" data-key="car_select">اختر نوع السيارة المناسب لرحلتك:</div><div class="cars-grid"><div class="car-card" onclick="selectCar(this, 'Dacia Logan', 'اقتصادية', 2500)" data-price="2500"><div class="car-img"></div><div class="car-name">Dacia Logan</div><div class="car-type">اقتصادية</div><div class="car-price-row"><div><div class="car-price">2,500 دج</div><div class="car-price-lbl">في اليوم</div></div></div></div><div class="car-card" onclick="selectCar(this, 'Renault Clio', 'اقتصادية', 2800)" data-price="2800"><div class="car-img"></div><div class="car-name">Renault Clio</div><div class="car-type">اقتصادية</div><div class="car-price-row"><div><div class="car-price">2,800 دج</div><div class="car-price-lbl">في اليوم</div></div></div></div><div class="car-card" onclick="selectCar(this, 'Hyundai Tucson', 'SUV', 5500)" data-price="5500"><div class="car-img"></div><div class="car-name">Hyundai Tucson</div><div class="car-type">SUV</div><div class="car-price-row"><div><div class="car-price">5,500 دج</div><div class="car-price-lbl">في اليوم</div></div></div></div></div><div style="color: rgba(255,255,255,0.65); font-size:0.82rem; font-weight:600; margin-bottom:0.6rem;" data-key="car_driver_self">🧑‍✈️ هل تريد سائقاً؟</div><div class="driver-opt"><div class="drv-btn active" id="drvSelf" onclick="setDriver('self')" data-key="car_driver_self">🧑 أقود بنفسي</div><div class="drv-btn" id="drvWith" onclick="setDriver('driver')" data-key="car_driver_with">🧑‍✈️ مع سائق (+3,000 دج/يوم)</div></div><div class="fg"><label class="lw" data-key="car_days">عدد أيام الكراء</label><input type="number" class="fi dk" id="carDays" min="1" value="3" oninput="updateCarSummary()"></div><div class="car-summary" id="carSummary"><div class="cs-row"><span class="cs-label" data-key="car_summary_type">نوع السيارة</span><span class="cs-val" id="csType">—</span></div><div class="cs-row"><span class="cs-label" data-key="car_summary_day">سعر اليوم</span><span class="cs-val" id="csDay">—</span></div><div class="cs-row"><span class="cs-label" data-key="car_summary_days">عدد الأيام</span><span class="cs-val" id="csDays">—</span></div><div class="cs-row"><span class="cs-label" data-key="car_summary_driver">خدمة السائق</span><span class="cs-val" id="csDriver">—</span></div><div class="cs-row"><span class="cs-label" data-key="car_summary_total">💰 إجمالي السيارة</span><span class="cs-val" id="csTotal">—</span></div></div></div></div><button class="bf-submit" onclick="submitBooking()" data-key="booking_submit">🎟️ تأكيد الحجز الآن</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="logo" style="margin-bottom: .5rem;"><div class="logo-icon"></div><div class="logo-text"><span class="logo-ar" data-key="brand_name">Tahwisa 213</span><span class="logo-en" data-key="brand_slogan">Tahwisa 213</span></div></div><p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p><div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div></div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="../index.html" data-key="nav_home">الرئيسية</a></li><li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="tours.html" data-key="nav_tours">الجولات</a></li><li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="about.html" data-key="nav_about">من نحن</a></li><li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="booking.html" data-key="nav_booking">احجز الآن</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

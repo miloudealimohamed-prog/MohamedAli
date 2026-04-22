@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | الرئيسية</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="./html/destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="./html/tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="./html/trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="./html/hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="./html/world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="./html/gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="./html/about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="./html/contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="./html/booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="./html/destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="./html/tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="./html/trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="./html/hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="./html/world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="./html/gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="./html/about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="./html/contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="./html/booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-cnt">
+    <div class="hero-badge" data-key="hero_badge">✦ اكتشف الجزائر الجميلة</div>
+    <h1 class="hero-title"><em>Tahwisa</em> 213</h1>
+    <div class="hero-sub" data-key="hero_sub">وجهتك لاكتشاف روائع الجزائر</div>
+    <p class="hero-desc" data-key="hero_desc">من الصحراء الكبرى الذهبية إلى الشواطئ الزرقاء المتوسطية، نأخذك في رحلة استثنائية لاكتشاف كنوز الجزائر الخفية</p>
+    <div class="hero-btns">
+      <a href="./html/tours.html" class="btn-p" data-key="hero_btn_tours">🧳 استكشف الجولات</a>
+      <a href="./html/about.html" class="btn-o" data-key="hero_btn_about">▶ تعرف علينا</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><span class="stat-num">48</span><span class="stat-lbl" data-key="stat_destinations">وجهة سياحية</span></div>
+    <div><span class="stat-num">+5K</span><span class="stat-lbl" data-key="stat_trips">رحلة ناجحة</span></div>
+    <div><span class="stat-num">7</span><span class="stat-lbl" data-key="stat_unesco">مواقع يونيسكو</span></div>
+    <div><span class="stat-num">98%</span><span class="stat-lbl" data-key="stat_satisfaction">رضا العملاء</span></div>
+  </div>
+  <div class="scroll-ind">
+    <span class="scroll-txt" data-key="scroll_text">تمرير</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section id="destinations">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <div>
+        <p class="sec-label" data-key="featured_label">الوجهات المميزة</p>
+        <h2 class="sec-title"><span data-key="featured_title_1">اكتشف</span> <span data-key="featured_title_2">أجمل مناطق</span> الجزائر</h2>
+      </div>
+      <a href="./html/destinations.html" class="btn-g" data-key="view_all">عرض الكل ←</a>
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card reveal">
+        <img class="dest-img" src="" alt="تمنراست" loading="lazy">
+        <div class="dest-ov"></div>
+        <div class="dest-info">
+          <span class="dest-tag" data-key="most_popular">⭐ الأكثر طلباً</span>
+          <span class="dest-name">تمنراست والهقار</span>
+          <div class="dest-meta">📍 الجنوب · الصحراء الكبرى</div>
+        </div>
+      </div>
+      <div class="dest-card reveal">
+        <img class="dest-img" src="" alt="الجزائر" loading="lazy">
+        <div class="dest-ov"></div>
+        <div class="dest-info">
+          <span class="dest-tag">🏛️ تاريخ</span>
+          <span class="dest-name">الجزائر العاصمة</span>
+          <div class="dest-meta">📍 القبة البيضاء</div>
+        </div>
+      </div>
+      <div class="dest-card reveal">
+        <img class="dest-img" src="" alt="غرداية" loading="lazy">
+        <div class="dest-ov"></div>
+        <div class="dest-info">
+          <span class="dest-tag">🏰 أثري</span>
+          <span class="dest-name">وادي مزاب</span>
+          <div class="dest-meta">📍 غرداية · يونيسكو</div>
+        </div>
+      </div>
+      <div class="dest-card reveal">
+        <img class="dest-img" src="" alt="بجاية" loading="lazy">
+        <div class="dest-ov"></div>
+        <div class="dest-info">
+          <span class="dest-tag">🏖️ شاطئ</span>
+          <span class="dest-name">بجاية الساحرة</span>
+          <div class="dest-meta">📍 بجاية · القبايل</div>
+        </div>
+      </div>
+      <div class="dest-card reveal">
+        <img class="dest-img" src="" alt="قسنطينة" loading="lazy">
+        <div class="dest-ov"></div>
+        <div class="dest-info">
+          <span class="dest-tag">🌉 معلم</span>
+          <span class="dest-name">قسنطينة الجسور</span>
+          <div class="dest-meta">📍 قسنطينة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tours">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <div>
+        <p class="sec-label" data-key="tours_label">باقات الجولات</p>
+        <h2 class="sec-title"><span data-key="tours_title_1">اختر</span> <span data-key="tours_title_2">جولتك المثالية</span></h2>
+      </div>
+      <a href="./html/tours.html" class="btn-g" data-key="view_all">عرض الكل ←</a>
+    </div>
+    <div class="tours-grid">
+      <div class="card reveal">
+        <img class="tour-img" src="" loading="lazy">
+        <div class="tour-body">
+          <div class="tour-badges"><span class="badge bg-gold">⭐ الأكثر طلباً</span><span class="badge bg">7 أيام</span></div>
+          <h3 class="tour-title">مغامرة الصحراء — تمنراست</h3>
+          <p class="tour-desc">رحلة استثنائية بين الكثبان الذهبية وليالي النجوم وركوب الجمال مع الطوارق</p>
+          <div class="tour-foot"><div class="tour-price"><span class="amt">35,000</span><span class="cur">دج / شخص</span></div><a href="./html/booking.html" class="btn-sm">احجز</a></div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <img class="tour-img" src="" loading="lazy">
+        <div class="tour-body">
+          <div class="tour-badges"><span class="badge bg">5 أيام</span><span class="badge bg-red">🏖️ صيفي</span></div>
+          <h3 class="tour-title">ساحل المتوسط — بجاية وعنابة</h3>
+          <p class="tour-desc">أجمل شواطئ الجزائر من منطقة القبايل الرائعة حتى شاطئ الأرجان الشهير</p>
+          <div class="tour-foot"><div class="tour-price"><span class="amt">22,000</span><span class="cur">دج / شخص</span></div><a href="./html/booking.html" class="btn-sm">احجز</a></div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <img class="tour-img" src="" loading="lazy">
+        <div class="tour-body">
+          <div class="tour-badges"><span class="badge bg-gold">🏛️ تراث</span><span class="badge bg">4 أيام</span></div>
+          <h3 class="tour-title">قسنطينة وتيمقاد الأثرية</h3>
+          <p class="tour-desc">جولة في أعماق التاريخ من مدينة الجسور إلى المدينة الرومانية الخالدة</p>
+          <div class="tour-foot"><div class="tour-price"><span class="amt">18,000</span><span class="cur">دج / شخص</span></div><a href="./html/booking.html" class="btn-sm">احجز</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding: 4rem 0; background: var(--dark);">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <div>
+        <p class="sec-label gold" data-key="gallery_label">معرض الصور</p>
+        <h2 class="sec-title white"><span data-key="gallery_title_1">لحظات</span> <span data-key="gallery_title_2">لا تُنسى</span></h2>
+      </div>
+      <a href="./html/gallery.html" class="btn-p" data-key="view_all">المعرض كاملاً ←</a>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+      <div class="gal-item reveal"><img class="gal-img" src="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="book-strip">
+  <div class="container">
+    <div style="text-align: center;" class="reveal">
+      <p class="sec-label gold" style="justify-content: center;" data-key="booking_label">احجز رحلتك</p>
+      <h2 class="sec-title white"><span data-key="booking_title_1">ابدأ مغامرتك</span> <span data-key="booking_title_2">اليوم</span></h2>
+      <p class="sec-desc light" style="margin: 0 auto;">احجز في دقيقتين وفريقنا يتواصل معك فوراً</p>
+    </div>
+    <div class="book-form-row reveal">
+      <div class="fg"><label class="lw" data-key="booking_destination">الوجهة</label><select class="fi dk"><option>تمنراست</option><option>بجاية</option><option>قسنطينة</option><option>تلمسان</option><option>غرداية</option></select></div>
+      <div class="fg"><label class="lw" data-key="booking_date">تاريخ الانطلاق</label><input type="date" class="fi dk"></div>
+      <div class="fg"><label class="lw" data-key="booking_people">عدد الأشخاص</label><select class="fi dk"><option>1</option><option>2</option><option selected>3-4</option><option>5+</option></select></div>
+      <div class="fg"><label class="lw" data-key="booking_package">الباقة</label><select class="fi dk"><option data-key="package_economy">اقتصادية</option><option selected data-key="package_standard">قياسية</option><option data-key="package_luxury">فاخرة</option></select></div>
+      <div class="fg"><label class="lw" data-key="booking_phone">هاتفك</label><input type="tel" class="fi dk" placeholder="0555..."></div>
+      <div class="fg"><label class="lw" style="opacity: 0;">_</label><button class="btn-p" onclick="showToast('✓ تم استلام طلبك! سنتواصل قريباً')" data-key="booking_submit">احجز الآن</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3rem;" class="reveal">
+      <p class="sec-label" style="justify-content: center;" data-key="testimonials_label">آراء عملائنا</p>
+      <h2 class="sec-title" style="text-align: center;"><span data-key="testimonials_title_1">ماذا يقول</span> <span data-key="testimonials_title_2">مسافرونا</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="card reveal" style="padding: 1.75rem;">
+        <div class="testi-q">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-txt">تجربة لا تُنسى! رحلة تمنراست مع Tahwisa 213 غيّرت نظرتي للجزائر تماماً. الفريق محترف والتنظيم مثالي.</p>
+        <div class="testi-auth"><img class="testi-av" src="https://randomuser.me/api/portraits/men/11.jpg" alt=""><div><div class="testi-name">كريم بن علي</div><div class="testi-org">الجزائر العاصمة</div></div></div>
+      </div>
+      <div class="card reveal" style="padding: 1.75rem;">
+        <div class="testi-q">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testi-txt">رحلة بجاية كانت أجمل من المتوقع! المرشد رائع ومعرفته بالمنطقة لا مثيل لها. سنعود بالتأكيد!</p>
+        <div class="testi-auth"><img class="testi-av" src="https://randomuser.me/api/portraits/women/68.jpg" alt=""><div><div class="testi-name">سارة حمداني</div><div class="testi-org">وهران</div></div></div>
+      </div>
+      <div class="card reveal" style="padding: 1.75rem;">
+        <div class="testi-q">"</div>
+        <div class="stars">★★★★☆</div>
+        <p class="testi-txt">جولة غرداية كانت ثقافية بامتياز. الفريق متخصص والحجز سهل جداً. سعر الباقة منافس جداً.</p>
+        <div class="testi-auth"><img class="testi-av" src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><div><div class="testi-name">أمين زياني</div><div class="testi-org">قسنطينة</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <div class="logo" style="margin-bottom: .5rem;">
+          <div class="logo-icon"></div>
+          <div class="logo-text">
+            <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+            <span class="logo-en" data-key="brand_slogan">Tahwisa 213</span>
+          </div>
+        </div>
+        <p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p>
+        <div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div>
+      </div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="index.html" data-key="nav_home">الرئيسية</a></li><li><a href="./html/destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="./html/tours.html" data-key="nav_tours">الجولات</a></li><li><a href="./html/gallery.html" data-key="nav_gallery">المعرض</a></li><li><a href="./html/map.html" data-key="nav_map">الخريطة</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="./html/about.html" data-key="nav_about">من نحن</a></li><li><a href="./html/contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="./html/booking.html" data-key="nav_booking">احجز الآن</a></li><li><a href="./html/login.html" data-key="nav_login">تسجيل الدخول</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+</html>

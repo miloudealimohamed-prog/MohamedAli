@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | من نحن</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="about.html" class="active" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="page-header">
+  <div class="ph-bg" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=500&fit=crop');"></div>
+  <div class="ph-ov"></div>
+  <div class="ph-cnt">
+    <div class="ph-label" data-key="about_label">من نحن</div>
+    <h1 class="ph-title" data-key="about_title_1">قصتنا <span data-key="about_title_2">وشغفنا</span></h1>
+    <div class="breadcrumb"><a href="../index.html" data-key="nav_home">الرئيسية</a><span class="sep">›</span><span class="cur" data-key="nav_about">من نحن</span></div>
+  </div>
+</div>
+
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal"><img class="about-img" src="https://images.unsplash.com/photo-1559521783-1d1599583485?w=800&h=600&fit=crop" alt="فريق Tahwisa 213"><div class="about-badge"><span class="num">10+</span><div class="lbl">سنوات خبرة</div></div></div>
+      <div class="reveal">
+        <p class="sec-label" data-key="about_label">من نحن</p>
+        <h2 class="sec-title" data-key="about_title_1">شغفنا هو <span data-key="about_title_2">الجزائر</span></h2>
+        <p class="sec-desc" style="max-width: 100%;" data-key="about_desc">Tahwisa 213 وكالة سياحية جزائرية متخصصة في رسم أجمل تجارب السفر داخل الجزائر. انطلقنا من حب عميق للوطن وإيمان بأن الجزائر تمتلك كنوزاً سياحية لا مثيل لها في العالم.<br><br>نضم فريقاً من المرشدين الشباب الشغوفين بتراثهم، يحملون رسالة واحدة: أن يجعلوا كل رحلة تجربة استثنائية تُحفر في الذاكرة.</p>
+        <div class="values"><div class="val"><div class="val-icon">🌍</div><div class="val-txt"><h4>خبرة محلية عميقة</h4><p>نعرف كل زاوية من الجزائر لأننا أبناؤها</p></div></div><div class="val"><div class="val-icon">💚</div><div class="val-txt"><h4>سياحة مستدامة</h4><p>نحافظ على البيئة والتراث في كل رحلاتنا</p></div></div><div class="val"><div class="val-icon">⭐</div><div class="val-txt"><h4>جودة لا تُساوم عليها</h4><p>رضاك ومتعتك هما معيارنا الوحيد للنجاح</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--cream);">
+  <div class="container">
+    <div style="text-align: center;" class="reveal"><p class="sec-label" style="justify-content: center;">فريقنا</p><h2 class="sec-title" style="text-align: center;">الأشخاص <span>وراء Tahwisa 213</span></h2></div>
+    <div class="team-grid"><div class="tm reveal"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""><div class="tm-name">يوسف بن عمر</div><div class="tm-role">المدير التنفيذي</div></div><div class="tm reveal"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt=""><div class="tm-name">ليلى رحال</div><div class="tm-role">مديرة الرحلات</div></div><div class="tm reveal"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt=""><div class="tm-name">كمال دراجي</div><div class="tm-role">مرشد سياحي</div></div><div class="tm reveal"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt=""><div class="tm-name">نور الدين قاسي</div><div class="tm-role">خبير الصحراء</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="logo" style="margin-bottom: .5rem;"><div class="logo-icon"></div><div class="logo-text"><span class="logo-ar" data-key="brand_name">Tahwisa 213</span><span class="logo-en" data-key="brand_slogan">Tahwisa 213</span></div></div><p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p><div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div></div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="../index.html" data-key="nav_home">الرئيسية</a></li><li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="tours.html" data-key="nav_tours">الجولات</a></li><li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="about.html" data-key="nav_about">من نحن</a></li><li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="booking.html" data-key="nav_booking">احجز الآن</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

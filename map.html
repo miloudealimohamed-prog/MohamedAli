@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | الخريطة</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="map.html" class="active">الخريطة</a></li>
+    <li><a href="about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="map.html" onclick="closeMenu()">📍 الخريطة</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="page-header">
+  <div class="ph-bg" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=500&fit=crop');"></div>
+  <div class="ph-ov"></div>
+  <div class="ph-cnt">
+    <div class="ph-label">الخريطة</div>
+    <h1 class="ph-title">خريطة <span>الجزائر</span></h1>
+    <div class="breadcrumb"><a href="../index.html" data-key="nav_home">الرئيسية</a><span class="sep">›</span><span class="cur">الخريطة</span></div>
+  </div>
+</div>
+
+<section style="background: var(--cream);">
+  <div class="container">
+    <div class="reveal" style="text-align: center;"><p class="sec-label" style="justify-content: center;">خريطة تفاعلية</p><h2 class="sec-title" style="text-align: center;">استكشف <span>الجزائر</span> على الخريطة</h2><p class="sec-desc" style="margin: 0 auto; text-align: center;">اعثر على وجهتك المفضلة واكتشف كل ما تقدمه</p></div>
+    <div class="map-container reveal"><iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12600000!2d3.0!3d28.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2sdz!4v1700000000000!5m2!1sar!2sdz" allowfullscreen loading="lazy"></iframe></div>
+    <div class="locations-grid"><div class="location-card reveal" onclick="showToast('📍 تمنراست - جوهرة الصحراء')"><div class="location-icon">🏜️</div><div class="location-name">تمنراست</div><div class="location-desc">الصحراء الكبرى · الهقار</div></div><div class="location-card reveal" onclick="showToast('📍 الجزائر العاصمة - القبة البيضاء')"><div class="location-icon">🏙️</div><div class="location-name">الجزائر العاصمة</div><div class="location-desc">العاصمة · القبة البيضاء</div></div><div class="location-card reveal" onclick="showToast('📍 بجاية - ساحل القبايل')"><div class="location-icon">🏖️</div><div class="location-name">بجاية</div><div class="location-desc">الشاطئ · القبايل</div></div><div class="location-card reveal" onclick="showToast('📍 قسنطينة - مدينة الجسور المعلقة')"><div class="location-icon">🌉</div><div class="location-name">قسنطينة</div><div class="location-desc">الشرق · مدينة الجسور</div></div><div class="location-card reveal" onclick="showToast('📍 وهران - الباهية')"><div class="location-icon">🎵</div><div class="location-name">وهران</div><div class="location-desc">الغرب · الباهية</div></div><div class="location-card reveal" onclick="showToast('📍 تلمسان - عاصمة الزيانيين')"><div class="location-icon">🕌</div><div class="location-name">تلمسان</div><div class="location-desc">الغرب · تاريخ</div></div><div class="location-card reveal" onclick="showToast('📍 غرداية - وادي مزاب')"><div class="location-icon">🏰</div><div class="location-name">غرداية</div><div class="location-desc">الجنوب · يونيسكو</div></div><div class="location-card reveal" onclick="showToast('📍 عنابة - مدينة الفيروز')"><div class="location-icon">🏖️</div><div class="location-name">عنابة</div><div class="location-desc">الشرق · شاطئ</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="logo" style="margin-bottom: .5rem;"><div class="logo-icon"></div><div class="logo-text"><span class="logo-ar" data-key="brand_name">Tahwisa 213</span><span class="logo-en" data-key="brand_slogan">Tahwisa 213</span></div></div><p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p><div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div></div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="../index.html" data-key="nav_home">الرئيسية</a></li><li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="tours.html" data-key="nav_tours">الجولات</a></li><li><a href="map.html">الخريطة</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="about.html" data-key="nav_about">من نحن</a></li><li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="booking.html" data-key="nav_booking">احجز الآن</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

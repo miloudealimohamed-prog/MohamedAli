@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | اتصل بنا</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" data-key="nav_world">العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" class="active" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 العالم</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="page-header">
+  <div class="ph-bg" style="background-image: url('https://images.unsplash.com/photo-1422222948315-28aadb7a2cb8?w=1600&h=500&fit=crop');"></div>
+  <div class="ph-ov"></div>
+  <div class="ph-cnt">
+    <div class="ph-label" data-key="contact_label">اتصل بنا</div>
+    <h1 class="ph-title" data-key="contact_title_1">تواصل <span data-key="contact_title_2">معنا</span></h1>
+    <div class="breadcrumb"><a href="../index.html" data-key="nav_home">الرئيسية</a><span class="sep">›</span><span class="cur" data-key="nav_contact">اتصل بنا</span></div>
+  </div>
+</div>
+
+<section style="background: var(--white);">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="sec-label" data-key="contact_label">اتصل بنا</p>
+        <h2 class="sec-title" data-key="contact_title_1">نحن هنا <span data-key="contact_title_2">لمساعدتك</span></h2>
+        <p class="sec-desc" data-key="contact_desc">لأي استفسار أو مساعدة، فريقنا في خدمتك على مدار الساعة</p>
+        <div style="margin-top: 2rem;"><div class="ci"><div class="ci-icon">📞</div><div><h4 data-key="contact_phone_label">الهاتف</h4><p>+213 696 78 70 44</p></div></div><div class="ci"><div class="ci-icon">📧</div><div><h4 data-key="contact_email_label">البريد الإلكتروني</h4><p>miloude.ali.mohamed@gmail.com</p></div></div><div class="ci"><div class="ci-icon">📍</div><div><h4 data-key="contact_address_label">العنوان</h4><p data-key="footer_address">ولاية الشلف، الجزائر</p></div></div><div class="ci"><div class="ci-icon">🕐</div><div><h4 data-key="contact_hours_label">ساعات العمل</h4><p data-key="contact_hours_value">أحد–خميس: 8ص–5م<br>السبت: 9ص–2م</p></div></div></div>
+      </div>
+      <div class="reveal">
+        <div class="cf"><div class="f2"><div class="fg"><label data-key="contact_name_placeholder">الاسم الكامل</label><input type="text" class="fi" placeholder="محمد أمين..." id="cName"></div><div class="fg"><label data-key="contact_phone_placeholder">رقم الهاتف</label><input type="tel" class="fi" placeholder="0555..." id="cPhone"></div></div><div class="fg"><label data-key="contact_email_placeholder">البريد الإلكتروني</label><input type="email" class="fi" placeholder="exemple@gmail.com" id="cEmail"></div><div class="fg"><label>الموضوع</label><select class="fi" id="cSubj"><option>استفسار عن جولة</option><option>حجز رحلة</option><option>شكوى أو اقتراح</option><option>شراكة تجارية</option></select></div><div class="fg"><label data-key="contact_msg_placeholder">الرسالة</label><textarea class="fi" placeholder="رسالتك هنا..." id="cMsg" rows="5"></textarea></div><button class="cf-submit" onclick="submitContact()" data-key="contact_send_btn">إرسال الرسالة ←</button></div>
+      </div>
+    </div>
+    <div class="creator-info reveal"><h3>👤 معلومات صانع الموقع</h3><p><strong data-key="contact_name">الاسم:</strong> Mohamed Amine Miloude</p><p><strong data-key="contact_date">تاريخ الصنع:</strong> 2026</p><p><strong>📧 البريد الإلكتروني:</strong> miloude.ali.mohamed@gmail.com</p><p><strong>📞 الهاتف:</strong> +213 696 78 70 44</p></div>
+    <div class="map-container reveal"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103207.26846843406!2d1.247703!3d36.165137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1285c4f7b6b3b3b3%3A0x8b8b8b8b8b8b8b8b!2z2YXYtdmI2YUg2KfZhNiz2YrYp9ix!5e0!3m2!1sar!2sdz!4v1700000000000" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="logo" style="margin-bottom: .5rem;"><div class="logo-icon"></div><div class="logo-text"><span class="logo-ar" data-key="brand_name">Tahwisa 213</span><span class="logo-en" data-key="brand_slogan">Tahwisa 213</span></div></div><p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p><div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div></div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="../index.html" data-key="nav_home">الرئيسية</a></li><li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="tours.html" data-key="nav_tours">الجولات</a></li><li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="about.html" data-key="nav_about">من نحن</a></li><li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="booking.html" data-key="nav_booking">احجز الآن</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

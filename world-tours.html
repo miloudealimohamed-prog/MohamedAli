@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahwisa 213 | رحلات حول العالم</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="../index.html" class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <span class="logo-ar" data-key="brand_name">Tahwisa 213</span>
+      <span class="logo-en" data-key="brand_slogan">Tahwisa 213 · Algeria Tourism</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-key="nav_home">الرئيسية</a></li>
+    <li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li>
+    <li><a href="tours.html" data-key="nav_tours">الجولات</a></li>
+    <li><a href="trips.html" data-key="nav_trips">الرحلات</a></li>
+    <li><a href="hotels.html" data-key="nav_hotels">الفنادق</a></li>
+    <li><a href="world-tours.html" class="active" data-key="nav_world">🌍 العالم</a></li>
+    <li><a href="gallery.html" data-key="nav_gallery">المعرض</a></li>
+    <li><a href="about.html" data-key="nav_about">من نحن</a></li>
+    <li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li>
+    <li><a href="booking.html" class="nav-cta" data-key="nav_booking">احجز الآن</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="ar" onclick="changeLanguage('ar')">ع</button>
+      <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <button class="btn-login" id="navLoginBtn" onclick="checkAndLogin()" data-key="nav_login">تسجيل الدخول</button>
+    <button class="hamburger" id="hbBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" onclick="closeMenu()" data-key="nav_home">🏠 الرئيسية</a>
+  <a href="destinations.html" onclick="closeMenu()" data-key="nav_destinations">🗺️ الوجهات</a>
+  <a href="tours.html" onclick="closeMenu()" data-key="nav_tours">🧳 الجولات</a>
+  <a href="trips.html" onclick="closeMenu()" data-key="nav_trips">✈️ الرحلات</a>
+  <a href="hotels.html" onclick="closeMenu()" data-key="nav_hotels">🏨 الفنادق</a>
+  <a href="world-tours.html" onclick="closeMenu()" data-key="nav_world">🌍 وجهات عالمية</a>
+  <a href="gallery.html" onclick="closeMenu()" data-key="nav_gallery">🖼️ المعرض</a>
+  <a href="about.html" onclick="closeMenu()" data-key="nav_about">ℹ️ من نحن</a>
+  <a href="contact.html" onclick="closeMenu()" data-key="nav_contact">📞 اتصل بنا</a>
+  <a href="booking.html" onclick="closeMenu()" style="color: var(--gol) !important; font-weight: 700;" data-key="nav_booking">🎟️ احجز الآن</a>
+</div>
+
+<div class="world-header">
+  <div class="world-header-bg"></div>
+  <div class="world-header-content">
+    <div class="world-badge">✦ اكتشف العالم مع Tahwisa 213</div>
+    <h1 class="world-title">العالم في <em>متناول يدك</em></h1>
+    <p class="world-sub">30+ وجهة عالمية مختارة بعناية — من باريس إلى طوكيو، من دبي إلى نيويورك</p>
+    <div class="world-stats"><div class="stat-item"><span class="stat-number">30+</span><span class="stat-label">وجهة عالمية</span></div><div class="stat-item"><span class="stat-number">6</span><span class="stat-label">قارات</span></div><div class="stat-item"><span class="stat-number">+2K</span><span class="stat-label">مسافر سعيد</span></div></div>
+  </div>
+</div>
+
+<section style="background: var(--cream); padding: 0 0 2rem;">
+  <div class="container">
+    <div class="search-bar reveal"><div class="fg" style="flex: 2;"><label>🔍 ابحث عن وجهتك</label><input type="text" class="fi" id="worldSearch" placeholder="باريس، دبي، طوكيو..." oninput="filterWorld()"></div><div class="fg"><label>القارة</label><select class="fi" id="continentSelect" onchange="filterWorld()"><option value="all">كل القارات</option><option value="europe">🌍 أوروبا</option><option value="asia">🌏 آسيا</option><option value="africa">🌍 أفريقيا</option><option value="gulf">🕌 الخليج</option><option value="americas">🌎 الأمريكتان</option></select></div><button class="btn-g" onclick="resetWorldFilters()">إعادة تعيين</button></div>
+    <div class="continent-tabs reveal"><button class="continent-btn active" onclick="setContinent('all', this)">🌐 الكل</button><button class="continent-btn" onclick="setContinent('europe', this)">🌍 أوروبا</button><button class="continent-btn" onclick="setContinent('asia', this)">🌏 آسيا</button><button class="continent-btn" onclick="setContinent('africa', this)">🌍 أفريقيا</button><button class="continent-btn" onclick="setContinent('gulf', this)">🕌 الخليج</button><button class="continent-btn" onclick="setContinent('americas', this)">🌎 الأمريكتان</button></div>
+    <div id="worldNoResults" style="display: none; text-align: center; padding: 3rem;"><div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div><div style="font-size: 1.3rem; font-weight: 700;">لا توجد نتائج</div></div>
+    <div class="world-grid" id="worldGrid">
+      <div class="world-card featured reveal" data-continent="europe"><img class="world-card-img" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=500&fit=crop" loading="lazy"><div class="world-card-overlay"></div><div class="world-card-body"><span class="world-card-flag">🇫🇷</span><span class="world-card-name">باريس</span><span class="world-card-country">فرنسا</span><div class="world-card-footer"><div><div class="world-card-price">من 185,000 دج</div><div class="world-card-days">7 أيام</div></div><a href="booking.html" class="world-card-btn">احجز ←</a></div></div></div>
+      <div class="world-card reveal" data-continent="europe"><img class="world-card-img" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=500&fit=crop" loading="lazy"><div class="world-card-overlay"></div><div class="world-card-body"><span class="world-card-flag">🇮🇹</span><span class="world-card-name">روما</span><span class="world-card-country">إيطاليا</span><div class="world-card-footer"><div><div class="world-card-price">من 160,000 دج</div><div class="world-card-days">6 أيام</div></div><a href="booking.html" class="world-card-btn">احجز ←</a></div></div></div>
+      <div class="world-card reveal" data-continent="asia"><img class="world-card-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=500&fit=crop" loading="lazy"><div class="world-card-overlay"></div><div class="world-card-body"><span class="world-card-flag">🇦🇪</span><span class="world-card-name">دبي</span><span class="world-card-country">الإمارات</span><div class="world-card-footer"><div><div class="world-card-price">من 180,000 دج</div><div class="world-card-days">5 أيام</div></div><a href="booking.html" class="world-card-btn">احجز ←</a></div></div></div>
+      <div class="world-card reveal" data-continent="asia"><img class="world-card-img" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&h=500&fit=crop" loading="lazy"><div class="world-card-overlay"></div><div class="world-card-body"><span class="world-card-flag">🇹🇷</span><span class="world-card-name">اسطنبول</span><span class="world-card-country">تركيا</span><div class="world-card-footer"><div><div class="world-card-price">من 120,000 دج</div><div class="world-card-days">6 أيام</div></div><a href="booking.html" class="world-card-btn">احجز ←</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.world-header{height:65vh;min-height:480px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-top:var(--nh)}.world-header-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,15,40,.9),rgba(10,50,100,.5),rgba(5,15,40,.85)),url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&h=800&fit=crop') center/cover no-repeat;transform:scale(1.04);animation:phz 20s ease-in-out infinite alternate}.world-header-content{position:relative;z-index:2;text-align:center;padding:0 2rem}.world-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.4);color:var(--gol);font-size:.78rem;padding:.3rem 1rem;border-radius:50px;margin-bottom:1.25rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}.world-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:.5rem}.world-title em{font-style:italic;color:var(--gol)}.world-sub{color:rgba(255,255,255,.72);font-size:1.05rem;margin-bottom:2rem;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.7}.world-stats{display:flex;gap:2.5rem;justify-content:center;margin-top:2.5rem}.stat-number{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gol);display:block}.stat-label{font-size:.72rem;color:rgba(255,255,255,.5);letter-spacing:.07em;text-transform:uppercase}
+</style>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="logo" style="margin-bottom: .5rem;"><div class="logo-icon"></div><div class="logo-text"><span class="logo-ar" data-key="brand_name">Tahwisa 213</span><span class="logo-en" data-key="brand_slogan">Tahwisa 213</span></div></div><p class="ft-desc" data-key="footer_desc">وكالة سياحية جزائرية متخصصة في إعداد أجمل رحلات الاستكشاف داخل الجزائر وحول العالم.</p><div class="soc-links"><a href="#" class="soc-link">f</a><a href="#" class="soc-link">𝕏</a><a href="#" class="soc-link">in</a><a href="#" class="soc-link">📷</a></div></div>
+      <div class="ft-col"><h5 data-key="footer_pages">الصفحات</h5><ul class="ft-links"><li><a href="../index.html" data-key="nav_home">الرئيسية</a></li><li><a href="destinations.html" data-key="nav_destinations">الوجهات</a></li><li><a href="tours.html" data-key="nav_tours">الجولات</a></li><li><a href="world-tours.html" data-key="nav_world">وجهات عالمية</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_company">الشركة</h5><ul class="ft-links"><li><a href="about.html" data-key="nav_about">من نحن</a></li><li><a href="contact.html" data-key="nav_contact">اتصل بنا</a></li><li><a href="booking.html" data-key="nav_booking">احجز الآن</a></li></ul></div>
+      <div class="ft-col"><h5 data-key="footer_contact">تواصل معنا</h5><ul class="ft-links"><li><a href="tel:+213696787044">+213 696 78 70 44</a></li><li><a href="mailto:miloude.ali.mohamed@gmail.com">miloude.ali.mohamed@gmail.com</a></li><li><a href="#" data-key="footer_address">ولاية الشلف، الجزائر</a></li></ul></div>
+    </div>
+    <div class="ft-bottom"><div class="ft-copy">© 2026 <span>Tahwisa 213</span>. <span data-key="copyright">جميع الحقوق محفوظة</span></div><div class="ft-copy" data-key="made_with">صُنع بـ ❤️ في ولاية الشلف، الجزائر</div></div>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
